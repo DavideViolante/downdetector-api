@@ -1,5 +1,5 @@
 # Downdetector.com unofficial APIs
-![Node.js CI](https://github.com/DavideViolante/downdetector-api/workflows/Node.js%20CI/badge.svg) [![Coverage Status](https://coveralls.io/repos/github/DavideViolante/downdetector-api/badge.svg?branch=master)](https://coveralls.io/github/DavideViolante/downdetector-api?branch=master)  [![Maintainability](https://api.codeclimate.com/v1/badges/ce48adbd97ff85557918/maintainability)](https://codeclimate.com/github/DavideViolante/downdetector-api/maintainability) [![Donate](https://img.shields.io/badge/paypal-donate-179BD7.svg)](https://www.paypal.me/dviolante)
+[![](https://github.com/davideviolante/downdetector-api/workflows/Node.js%20CI/badge.svg)](https://github.com/DavideViolante/downdetector-api/actions?query=workflow%3A"Node.js+CI") [![Coverage Status](https://coveralls.io/repos/github/DavideViolante/downdetector-api/badge.svg?branch=master)](https://coveralls.io/github/DavideViolante/downdetector-api?branch=master)  [![Maintainability](https://api.codeclimate.com/v1/badges/ce48adbd97ff85557918/maintainability)](https://codeclimate.com/github/DavideViolante/downdetector-api/maintainability) [![Donate](https://img.shields.io/badge/paypal-donate-179BD7.svg)](https://www.paypal.me/dviolante)
 
 Unofficial APIs for Downdetector.com website.
 
