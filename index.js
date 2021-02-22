@@ -40,7 +40,7 @@ function str2obj (chartPoints) {
  */
 async function downdetector (company, domain = 'com') {
   try {
-    if (!company || typeof company !== 'string') {
+    if (!company || (typeof company) !== 'string') {
       throw Error('Invalid input')
     }
     const res = await callDowndetector(company, domain)
