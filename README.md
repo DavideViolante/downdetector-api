@@ -15,7 +15,7 @@ async function main () {
     // Without specifying the downdetector domain
     const response = await downdetector('steam');
     // Specifying the downdetector domain (some companies are not in the .com domain)
-    const response = await downdetector('wind', 'it');
+    const response = await downdetector('windtre', 'it');
   } catch (err) {
     console.error(err);
   }
