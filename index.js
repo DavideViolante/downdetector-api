@@ -10,8 +10,8 @@ function callDowndetector (company, domain) {
 
 function getScriptContent (data) {
   const $ = cheerio.load(data)
-  const scriptElem = $('#chart-row > div > div.popover-container.justify-content-center.p-relative > script:nth-child(3)')
-  return scriptElem.contents().get(0).data
+  const scriptElem = $('script[type="text/javascript"]')
+  return scriptElem.contents().get(3).data
 }
 
 function getChartPointsString (scriptContent) {
@@ -47,7 +47,6 @@ async function downdetector (company, domain = 'com') {
     const scriptContent = getScriptContent(res.data)
     const chartPoints = getChartPointsString(scriptContent)
     const { reports, baseline } = getChartPointsObject(chartPoints)
-    // console.log(reports, baseline)
     return { reports, baseline }
   } catch (err) {
     console.error(err.message)
@@ -55,5 +54,3 @@ async function downdetector (company, domain = 'com') {
 }
 
 exports.downdetector = downdetector
-
-// downdetector('wind', 'it')
