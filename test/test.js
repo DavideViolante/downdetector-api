@@ -18,4 +18,14 @@ describe('Tests for Downdetector.com unofficial APIs', () => {
     assert.strictEqual(reports.length, 96)
     assert.strictEqual(baseline.length, 96)
   })
+
+  it('should return correct response with domain', async () => {
+    const { reports, baseline } = await downdetector('windtre', 'it')
+    assert.ok(reports)
+    assert.ok(baseline)
+    assert.ok(reports.length)
+    assert.ok(baseline.length)
+    assert.strictEqual(reports.length, 96)
+    assert.strictEqual(baseline.length, 96)
+  })
 })
