@@ -10,6 +10,9 @@
       "ecmaVersion": 12
     },
     "rules": {
+      "max-len": [
+        "error", 100
+      ],
       "object-curly-spacing": [
         "error", "always"
       ],

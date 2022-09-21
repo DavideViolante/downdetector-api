@@ -1,5 +1,5 @@
-const axios = require('axios');
 const cheerio = require('cheerio');
+const puppeteer = require('puppeteer');
 
 /**
  * Call Downdetector website and get the page content
@@ -7,8 +7,15 @@ const cheerio = require('cheerio');
  * @param {String} domain Domain suffix of downdetector website (eg: com)
  * @return {String} The page content
  */
-function callDowndetector(company, domain) {
-  return axios.get(`https://downdetector.${domain}/status/${company}/`);
+async function callDowndetector(company, domain) {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  // eslint-disable-next-line max-len
+  await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36');
+  await page.goto(`https://downdetector.${domain}/status/${company}/`);
+  const content = await page.content();
+  await browser.close();
+  return content;
 }
 
 /**
@@ -69,7 +76,7 @@ async function downdetector(company, domain = 'com') {
     if (!company || (typeof company) !== 'string') {
       throw Error('Invalid input');
     }
-    const { data } = await callDowndetector(company, domain);
+    const data = await callDowndetector(company, domain);
     const scriptContent = getScriptContent(data);
     const chartPoints = getChartPointsString(scriptContent);
     const { reports, baseline } = getChartPointsObject(chartPoints);

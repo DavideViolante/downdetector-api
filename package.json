@@ -1,12 +1,12 @@
 {
   "name": "downdetector-api",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "description": "Unofficial APIs for downdetector.com",
   "main": "index.js",
   "scripts": {
     "lint": "eslint ./",
-    "test": "nyc mocha",
-    "coverage": "nyc --reporter=lcov --reporter=text mocha"
+    "test": "nyc mocha --exit",
+    "coverage": "nyc --reporter=lcov --reporter=text mocha --exit"
   },
   "repository": {
     "type": "git",
@@ -28,13 +28,13 @@
   },
   "homepage": "https://github.com/DavideViolante/downdetector-api#readme",
   "dependencies": {
-    "axios": "^0.23.0",
-    "cheerio": "^1.0.0-rc.10"
+    "cheerio": "^1.0.0-rc.12",
+    "puppeteer": "^18.0.4"
   },
   "devDependencies": {
-    "eslint": "^8.1.0",
+    "eslint": "^8.23.1",
     "eslint-config-google": "^0.14.0",
-    "mocha": "^9.1.3",
+    "mocha": "^10.0.0",
     "nyc": "^15.1.0"
   }
 }
