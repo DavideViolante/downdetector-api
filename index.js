@@ -25,8 +25,15 @@ async function callDowndetector(company, domain) {
  */
 function getScriptContent(data) {
   const $ = cheerio.load(data);
-  const scriptElem = $('script[type="text/javascript"]');
-  return scriptElem.contents().get(3).data;
+  const scriptElems = $('script[type="text/javascript"]');
+  let res = '';
+  for (const script of scriptElems) {
+    if (script.children?.[0]?.data.includes('{ x:')) {
+      res = script.children[0]?.data; // 5th script on 06/2023
+      break;
+    }
+  }
+  return res;
 }
 
 /**
