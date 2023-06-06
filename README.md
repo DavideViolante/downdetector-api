@@ -5,6 +5,8 @@
 
 Unofficial APIs for Downdetector.com website.
 
+It might not work sometimes (expecially .com domain) due to the website being protected by Cloudflare.
+
 ### Install
 `npm i downdetector-api`
 
