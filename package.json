@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint ./",
     "test": "nyc mocha --timeout 5000 --exit",
-    "coverage": "nyc --reporter=lcov --reporter=text mocha --exit"
+    "coverage": "nyc --reporter=lcov --reporter=text mocha --timeout 5000 --exit"
   },
   "repository": {
     "type": "git",
