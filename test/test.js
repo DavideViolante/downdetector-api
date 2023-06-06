@@ -10,7 +10,8 @@ describe('Tests for Downdetector.com unofficial APIs', () => {
   });
 
   it('should return correct response', async () => {
-    const { reports, baseline } = await downdetector('facebook');
+    // domain = 'com' has cloudflare challenge now and test fails
+    const { reports, baseline } = await downdetector('facebook', 'it');
     assert.ok(reports);
     assert.ok(baseline);
     assert.ok(reports.length);
