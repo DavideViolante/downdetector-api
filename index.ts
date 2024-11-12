@@ -1,5 +1,4 @@
 import { load } from 'cheerio';
-import fs from 'node:fs';
 import { executablePath } from 'puppeteer';
 import puppeteer from 'puppeteer-extra';
 import pluginStealth from 'puppeteer-extra-plugin-stealth';
@@ -42,7 +41,6 @@ async function callDowndetector(company: string, domain: string): Promise<string
  * @return {string} The content of the script tag
  */
 function getScriptContent(data: string): string {
-  fs.writeFileSync('output.html', data);
   const $ = load(data);
   const scriptElems = $('script[type="text/javascript"]');
   let res = '';
