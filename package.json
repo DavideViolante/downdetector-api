@@ -6,7 +6,9 @@
   "scripts": {
     "lint": "eslint ./",
     "test": "nyc mocha --timeout 5000 --exit",
-    "coverage": "nyc --reporter=lcov --reporter=text mocha --timeout 5000 --exit"
+    "coverage": "nyc --reporter=lcov --reporter=text mocha --timeout 5000 --exit",
+    "build": "tsc",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,9 @@
     "downtime"
   ],
   "author": "Davide Violante",
+  "contributors": [
+    "Enzo Gehlen <enzo.gehlen@hotmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/DavideViolante/downdetector-api/issues"
@@ -29,12 +34,19 @@
   "homepage": "https://github.com/DavideViolante/downdetector-api#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
-    "puppeteer": "^22.11.2"
+    "puppeteer": "^22.11.2",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+
   },
   "devDependencies": {
     "eslint": "^8.42.0",
     "eslint-config-google": "^0.14.0",
     "mocha": "^10.2.0",
-    "nyc": "^15.1.0"
+    "nyc": "^15.1.0",
+    "@types/node": "^20.11.24",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "typescript": "^5.3.3"
   }
 }
