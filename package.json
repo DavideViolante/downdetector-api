@@ -1,6 +1,6 @@
 {
   "name": "downdetector-api",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Unofficial APIs for downdetector.com",
   "main": "index.js",
   "scripts": {
@@ -29,12 +29,12 @@
   "homepage": "https://github.com/DavideViolante/downdetector-api#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
-    "puppeteer": "^22.11.2"
+    "puppeteer": "^24.2.1"
   },
   "devDependencies": {
-    "eslint": "^8.42.0",
+    "eslint": "^8.57.0",
     "eslint-config-google": "^0.14.0",
-    "mocha": "^10.2.0",
-    "nyc": "^15.1.0"
+    "mocha": "^11.1.0",
+    "nyc": "^17.1.0"
   }
 }
