@@ -9,7 +9,7 @@ describe('Tests for Downdetector.com unofficial APIs', () => {
     assert.strictEqual(res2, undefined);
   });
 
-  xit('should return correct response', async () => {
+  it('should return correct response', async () => {
     // domain = 'com' has cloudflare challenge now and test fails
     const { reports, baseline } = await downdetector('facebook');
     assert.ok(reports);

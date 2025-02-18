@@ -3,9 +3,9 @@ const puppeteer = require('puppeteer');
 
 /**
  * Call Downdetector website and get the page content
- * @param {String} company Company to get the data for
- * @param {String} domain Domain suffix of downdetector website (eg: com)
- * @return {String} The page content
+ * @param {string} company Company to get the data for
+ * @param {string} domain Domain suffix of downdetector website (eg: com)
+ * @return {Promise<string>} The page content
  */
 async function callDowndetector(company, domain) {
   const browser = await puppeteer.launch();
@@ -20,8 +20,8 @@ async function callDowndetector(company, domain) {
 
 /**
  * Get the script tag content from the Downdetector page content
- * @param {String} data Page content
- * @return {String} The content of the script tag
+ * @param {string} data Page content
+ * @return {string} The content of the script tag
  */
 function getScriptContent(data) {
   const $ = cheerio.load(data);
@@ -38,7 +38,7 @@ function getScriptContent(data) {
 
 /**
  * Get array of data from a string
- * @param {String} scriptContent Script content as a string
+ * @param {string} scriptContent Script content as a string
  * @return {Array} Array of strings each one containing a pair of data
  */
 function getChartPointsString(scriptContent) {
@@ -49,8 +49,8 @@ function getChartPointsString(scriptContent) {
 
 /**
  * Convert a string to object with reports and baseline properties
- * @param {String} chartPoints string with dates and values
- * @return {Object} object with reports and baseline properties
+ * @param {string} chartPoints string with dates and values
+ * @return {Object} Object with reports and baseline properties
  */
 function getChartPointsObject(chartPoints) {
   return {
@@ -61,7 +61,7 @@ function getChartPointsObject(chartPoints) {
 
 /**
  * Convert a string to object with date and value properties
- * @param {String} chartPoints string to convert to object
+ * @param {string} chartPoints string to convert to object
  * @return {Object} object with date and value properties
  */
 function str2obj(chartPoints) {
@@ -77,6 +77,7 @@ function str2obj(chartPoints) {
  * Get data from Downdetector
  * @param {string} company Company name in Downdetector (see URL)
  * @param {string} [domain] Downdetector domain to use (default is 'com')
+ * @return {Promise<Object>} Object with reports and baseline properties
  */
 async function downdetector(company, domain = 'com') {
   try {
