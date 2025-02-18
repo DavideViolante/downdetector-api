@@ -8,7 +8,8 @@ const puppeteer = require('puppeteer');
  * @return {Promise<string>} The page content
  */
 async function callDowndetector(company, domain) {
-  const browser = await puppeteer.launch();
+  const options = process.env.NODE_ENV === 'test' ? { args: ['--no-sandbox'] } : {};
+  const browser = await puppeteer.launch(options);
   const page = await browser.newPage();
   // eslint-disable-next-line max-len
   await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36');
